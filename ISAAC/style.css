@@ -1,0 +1,390 @@
+
+/* ===========================
+        ESTILO GENERAL
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family: "Segoe UI", sans-serif;
+
+    background:
+    radial-gradient(circle at top,#243b55 0%,#141E30 35%,#07080d 100%);
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    color:white;
+
+}
+
+/* ===========================
+        PANTALLAS
+=========================== */
+
+.pantalla{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.oculto{
+
+    display:none;
+
+}
+
+/* ===========================
+        DESTELLOS
+=========================== */
+
+#estrellas{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.destello{
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+    0 0 8px white,
+    0 0 16px white;
+
+    animation:brillar infinite ease-in-out;
+
+}
+
+@keyframes brillar{
+
+    0%,100%{
+
+        opacity:.15;
+        transform:scale(.7);
+
+    }
+
+    50%{
+
+        opacity:1;
+        transform:scale(2);
+
+    }
+
+}
+
+/* ===========================
+        TARJETA
+=========================== */
+
+.tarjeta{
+
+    width:390px;
+
+    max-width:92%;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+    animation:subir 1s ease;
+
+}
+
+@keyframes subir{
+
+    from{
+
+        transform:translateY(30px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+}
+
+.fotoPortada{
+
+    width:190px;
+
+    height:190px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin:auto;
+
+    display:block;
+
+    border:4px solid rgba(255,255,255,.25);
+
+    box-shadow:0 0 40px rgba(255,255,255,.18);
+
+}
+
+.detalle{
+
+    margin-top:25px;
+
+    color:#d7d7d7;
+
+    letter-spacing:3px;
+
+    font-size:11px;
+
+    text-transform:uppercase;
+
+}
+
+h1{
+
+    margin-top:20px;
+
+    font-size:35px;
+
+}
+
+h2{
+
+    margin-top:8px;
+
+    font-weight:400;
+
+}
+
+.frase{
+
+    margin-top:28px;
+
+    color:#ececec;
+
+    line-height:1.8;
+
+    font-style:italic;
+
+}
+
+button{
+
+    margin-top:35px;
+
+    border:none;
+
+    padding:15px 34px;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#141E30;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    font-weight:bold;
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 30px rgba(255,255,255,.25);
+
+}
+
+/* ===========================
+          SOBRE
+=========================== */
+
+.sobre{
+
+    position:relative;
+
+    width:360px;
+
+    height:240px;
+
+}
+
+.cuerpo{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#efe2ca;
+
+    border-radius:10px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+}
+
+.tapa{
+
+    position:absolute;
+
+    top:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:#e5d2b0;
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    transform-origin:top;
+
+    transition:1s;
+
+}
+
+.sello{
+
+    position:absolute;
+
+    left:50%;
+
+    top:95px;
+
+    transform:translateX(-50%);
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:#b33b54;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+}
+
+.textoSobre{
+
+    margin-top:35px;
+
+    font-size:22px;
+
+    color:white;
+
+}
+
+/* ===========================
+          CARTA
+=========================== */
+
+.papel{
+
+    width:700px;
+
+    max-width:92%;
+
+    background:#fffdf8;
+
+    color:#333;
+
+    border-radius:18px;
+
+    padding:50px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.4);
+
+}
+
+.papel{
+
+    width:700px;
+
+    max-width:92%;
+
+    max-height:80vh;
+
+    overflow-y:auto;
+
+    background:#fffdf8;
+
+    
+}
+
+
+#textoCarta{
+
+    white-space:pre-line;
+
+    line-height:1.45;
+
+    font-size:24px;
+
+    font-family:"Cormorant Garamond", serif;
+
+}
